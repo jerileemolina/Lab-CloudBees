@@ -4,7 +4,7 @@ pipeline {
         stage('Buzz Buzz') {
             steps {
 		echo 'Bees Buzz!'
-        echo 'Prueba mergeateee'
+        echo 'Cambio main'
         }
     }
         stage('Bees bees') {
