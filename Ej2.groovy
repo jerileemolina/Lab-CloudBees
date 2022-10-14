@@ -24,7 +24,6 @@ pipeline {
          stage('Fluffy Deploy Stage') {
             steps {
 		echo 'Placeholder'
-        
         }
      }
    }
