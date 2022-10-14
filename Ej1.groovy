@@ -6,7 +6,7 @@ pipeline {
 		echo 'Bees Buzz!'
         }
     }
-        stage ('Bees bees') {
+        stage('Bees bees') {
             steps {
         echo 'Buzz,Bees,Buzz!'
         echo 'Bees Buzzing'
