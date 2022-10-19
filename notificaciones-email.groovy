@@ -12,14 +12,14 @@ pipeline {
             echo 'Esto funciona'
         }
 
-          success{
+          success {
             echo "Exitoso"
-                }
+        }
 
         failure {
-            emailext body: 'Notificacion Jenkins',
-            subject: 'Notificacion Jenkins,
-            to: 'jerilee.molina.velasco@gmail.com'
+            emailext body: "Notificacion Jenkins",
+            subject: "Notificacion Jenkins",
+            to: "jerilee.molina.velasco@gmail.com"
         }
     }
 }
