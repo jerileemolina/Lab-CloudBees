@@ -1,4 +1,4 @@
-pipeline {
+pipeline {  
  agent any
    stages {
      stage ('Primera etapa sin paralelo') {
@@ -36,4 +36,4 @@ pipeline {
     }
 }
 
-}
+            }
