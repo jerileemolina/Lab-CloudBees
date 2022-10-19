@@ -12,7 +12,7 @@ pipeline {
             echo 'Esto funciona'
         }
         failure {
-            mail to: j.molina.velasco@accenture.com, subject: 'El pipeline ha fallado'
+            mail to: jerilee.molina.velasco@gmail.com, subject: 'El pipeline ha fallado'
         }
     }
 }
