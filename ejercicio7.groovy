@@ -27,6 +27,7 @@ pipeline {
         }
       }
     }
+
     stage('Fluffy Test') {
       parallel {
         stage('Backend Java 8') {
@@ -40,6 +41,7 @@ pipeline {
             junit 'target/surefire-reports/**/TEST*.xml'
           }
         }
+
         stage('Frontend Java 8') {
           agent {
             node { label 'java8' }
@@ -51,6 +53,7 @@ pipeline {
             junit 'target/test-results/**/TEST*.xml'
           }
         }
+
         stage('Performance Java 8') {
           agent {
             node { label 'java8' }
@@ -61,6 +64,7 @@ pipeline {
             sh './jenkins/test-performance.sh'
           }
         }
+
         stage('Static Java 8') {
           agent {
             node { label 'java8' }
@@ -71,6 +75,7 @@ pipeline {
             sh './jenkins/test-static.sh'
           }
         }
+
         stage('Backend Java 7') {
           agent {
             node { label 'java7' }
@@ -82,6 +87,7 @@ pipeline {
             junit 'target/surefire-reports/**/TEST*.xml'
           }
         }
+
         stage('Frontend Java 7') {
           agent {
             node { label 'java7' }
@@ -93,6 +99,7 @@ pipeline {
             junit 'target/test-results/**/TEST*.xml'
           }
         }
+
         stage('Performance Java 7') {
           agent {
             node { label 'java7' }
@@ -103,11 +110,12 @@ pipeline {
             sh './jenkins/test-performance.sh'
           }
         }
+
         stage('Static Java 7') {
           agent {
             node { label 'java7' }
-
           }
+
           steps {
             unstash 'Java 7'
             sh './jenkins/test-static.sh'
@@ -115,6 +123,7 @@ pipeline {
         }
       }
     }
+
     stage('Confirm Deploy') {
       steps {
         input(message: 'Okay to deploy to staging?', ok: 'Yes')
@@ -123,8 +132,8 @@ pipeline {
     stage('Fluffy Deploy') {
       agent {
         node { label 'java7' }
-
       }
+      
       steps {
         unstash 'Java 7'
         sh './jenkins/deploy.sh staging'
