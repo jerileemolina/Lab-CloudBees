@@ -137,6 +137,7 @@ pipeline {
       steps {
         unstash 'Java 7'
         sh './jenkins/deploy.sh staging'
+        
       }
     }
   }
