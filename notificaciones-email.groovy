@@ -19,8 +19,9 @@ pipeline {
         failure {
             emailext body: 'Notificacion Jenkins',
             subject: 'Notificacion Jenkins,
-            to: 'jerilee.molina.velasco@gmail.com'
+            to:'jerilee.molina.velasco@gmail.com'
 
+            
             //echo "Argo ha fallao"
         }
     }
