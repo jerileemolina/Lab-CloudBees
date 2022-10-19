@@ -11,8 +11,17 @@ pipeline {
         always {
             echo 'Esto funciona'
         }
+
+          success{
+            echo "Exitoso"
+                }
+
         failure {
-            mail to: 'jerilee.molina.velasco@gmail.com', subject: 'El pipeline ha fallado'
+            emailext body: 'Notificacion Jenkins',
+            subject: 'Notificacion Jenkins,
+            to: 'jerilee.molina.velasco@gmail.com'
+
+            //echo "Argo ha fallao"
         }
     }
 }
