@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test email notifications') {
             steps {
-                sh 'make check'
+                echo 'Hola'
             }
         }
     }
